@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "Movies";
+}
+<ul>
+    @foreach (var movie in Model.Movies)
+    {
+        <li>@movie.Name</li>
+    }
+
+</ul>
