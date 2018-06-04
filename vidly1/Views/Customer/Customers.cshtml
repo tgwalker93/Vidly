@@ -1,10 +1,13 @@
 ﻿@{
     ViewBag.Title = "Customers";
 }
+<br/>
+
+<h1><b>Customers</b></h1>
 <ul>
     @foreach (var customer in Model.Customers)
     {
-        <li>@customer.Name</li>
+        <li><h2><a href="./Details/@customer.Id">@customer.Name</a></h2></li>
     }
 
 </ul>

@@ -1,0 +1,46 @@
+﻿@using vidly1.Models
+@model vidly1.ViewModels.MovieCustomerViewModel
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var urlString = Request.FilePath;
+    int idx = urlString.LastIndexOf("/");
+    var customerId = urlString.Substring(idx + 1);
+    var found = false;
+
+
+}
+<h2>Customer Details</h2>
+
+
+    @foreach (var customer in Model.Customers)
+    {
+
+        if (customer.Id == Int32.Parse(customerId))
+        {
+            found = true;
+            <h2>Customer Name: @customer.Name</h2>
+
+            <h2> Customer Id: @customer.Id</h2>
+
+
+        }
+    }
+
+@{
+
+    if (found == false)
+    {
+
+        <h1>No Customer Found!</h1>
+
+    }
+
+}
+
+
+
+
+

@@ -10,6 +10,24 @@ namespace vidly1.Controllers
 {
     public class MoviesController : Controller
     {
+        public ActionResult Movies()
+        {
+            var movies = new List<Movies>
+            {
+                new Movies {Name="Shrek", Id=1},
+                new Movies {Name="Titanic", Id=2}
+
+            };
+
+            var viewModel = new MovieCustomerViewModel()
+            {
+
+                Movies = movies
+
+            };
+
+            return View(viewModel);
+        }
         // GET: Movies/Random
         public ActionResult Random()
         {
@@ -20,7 +38,7 @@ namespace vidly1.Controllers
                 new Customer {Name="Customer 2", Id=2}
             };
 
-            var viewModel = new RandomMovieViewModel
+            var viewModel = new MovieCustomerViewModel()
             {
 
                
